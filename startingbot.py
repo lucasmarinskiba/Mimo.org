@@ -1,4 +1,4 @@
-print("Hello! What is your name?")
+print("Hello! What is your name?")       //this bot provides you a short conversation about your name, age, difference age, and your favorite colour
 name = input("")
 print(f"Nice to meet you, {name}!")
 print("How old are you?")
