@@ -1,0 +1,50 @@
+def crear_menu():
+    """Crea un diccionario con los platos y sus precios."""
+    menu = {
+        "Hamburguesa": 5.99,
+        "Pizza": 8.99,
+        "Ensalada": 6.49,
+        "Bebida": 2.50
+    }
+    return menu
+
+def mostrar_menu(menu):
+    """Muestra el menú al usuario."""
+    print("Menú:")
+    for plato, precio in menu.items():
+        print(f"- {plato}: ${precio}")
+
+def tomar_pedido(menu):
+    """Permite al usuario realizar un pedido."""
+    pedido = []
+    while True:
+        plato = input("¿Qué deseas pedir? (o escribe 'salir' para finalizar): ")
+        if plato.lower() == "salir":
+            break
+        if plato in menu:
+            pedido.append(plato)
+        else:
+            print("Plato no disponible.")
+    return pedido
+
+def calcular_total(pedido, menu):
+    """Calcula el total del pedido."""
+    total = 0
+    for plato in pedido:
+        total += menu[plato]
+    return total
+
+# Crear el menú
+menu = crear_menu()
+
+# Mostrar el menú
+mostrar_menu(menu)
+
+# Tomar el pedido
+pedido = tomar_pedido(menu)
+
+# Calcular el total
+total = calcular_total(pedido, menu)
+
+# Mostrar el total
+print(f"El total de tu pedido es: ${total:.2f}")
